@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rompendo o Silêncio</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <button id="panic-button" onclick="saidaRapida()">Sair rápido</button>
+
+    <header class="navbar">
+      <div class="logo">
+        <!-- SVG do Coração -->
+        <svg class="heart-svg" viewBox="0 0 32 32" width="24" height="24">
+          <path d="M16,28.261c-0.757,0-1.515-0.289-2.094-0.868C7.575,21.316,2,15.694,2,10.607C2,6.724,5.124,3.6,9,3.6 c2.083,0,3.957,0.963,5.328,2.534C15.706,4.563,17.58,3.6,19.664,3.6C23.547,3.6,26.67,6.724,26.67,10.607 c0,5.087-5.575,10.709-11.906,16.786C14.184,27.972,13.426,28.261,12.669,28.261z"/>
+        </svg>
+        Portal de apoio à Mulher
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <a href="tel:180" class="btn-emergency">📞 Ligue 180</a>
+    </header>
+
+    <section class="page-hero">
+      <h1>Serviços e Apoio</h1>
+      <p>Recursos disponíveis para você</p>
+    </section>
+
+    <main class="content grid">
+      <div class="card">
+        <h3>Lei Maria da Penha</h3>
+        <p>Protege mulheres contra violência doméstica e familiar.</p>
+        <a
+          href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm"
+          target="_blank"
+        >
+          Ver legislação →
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Delegacia da Mulher</h3>
+        <p>
+          Procure a unidade mais próxima para registrar ocorrência e buscar
+          proteção. <a href="javascript:void(0)" onclick="abrirPaginaDelegacias()">Clique aqui</a> para contatos de algumas delegacias próximas.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Central de Atendimento</h3>
+        <p>Atendimento gratuito e 24h para orientação.</p>
+        <a href="tel:180">Ligar 180 →</a>
+      </div>
+    </main>
+
+    <script src="js/script.js"></script>
+
+    <!-- ACESSIBILIDADE VLIBRAS -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+  </body>
+
+  <footer>
+    <p>© 2023 Todos os direitos reservados.</p>
+  </footer>
+</html>

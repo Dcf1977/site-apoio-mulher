@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rompendo o Silêncio</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <button id="panic-button" onclick="saidaRapida()">Sair rápido</button>
+
+    <header class="navbar">
+      <div class="logo">
+        <!-- SVG do Coração -->
+        <svg class="heart-svg" viewBox="0 0 32 32" width="24" height="24">
+          <path d="M16,28.261c-0.757,0-1.515-0.289-2.094-0.868C7.575,21.316,2,15.694,2,10.607C2,6.724,5.124,3.6,9,3.6 c2.083,0,3.957,0.963,5.328,2.534C15.706,4.563,17.58,3.6,19.664,3.6C23.547,3.6,26.67,6.724,26.67,10.607 c0,5.087-5.575,10.709-11.906,16.786C14.184,27.972,13.426,28.261,12.669,28.261z"/>
+        </svg>
+        Portal de apoio à Mulher
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+
+      <a href="tel:180" class="btn-emergency">📞 Ligue 180</a>
+    </header>
+
+    <section class="page-hero">
+      <h1>Sobre o Portal</h1>
+      <p>Conheça nossa missão e propósito</p>
+    </section>
+
+    <main class="content">
+      <div class="card">
+        <h2>Nossa Missão</h2>
+        <p>
+          Nosso objetivo é oferecer apoio e informação para vítimas de violência
+          doméstica, direcionando para os canais oficiais de denúncia e
+          orientação. Acreditamos que informação salva vidas e que ninguém deve
+          enfrentar isso sozinho.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Nosso Compromisso</h2>
+        <p>
+          Criar um ambiente seguro, acessível e confiável, conectando pessoas a
+          recursos essenciais como ajuda psicológica, jurídica e canais de
+          emergência.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Você sabe identificar os tipos de violência?</h2>
+        <p id="questionario">
+          Responda nosso questionário e descubra como reconhecer os sinais de
+          violência. Leva apenas alguns minutos e pode te ajudar a identificar
+          os sinais que você pode estar ignorando.
+        </p>
+        <button type="submit" class="btn-primary" onclick="respQuestionario()">
+          <strong>Responder</strong>
+        </button>
+      </div>
+    </main>
+
+    <script src="js/script.js"></script>
+
+    <!-- ACESSIBILIDADE VLIBRAS -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+  </body>
+
+  <footer>
+    <p>© 2023 Todos os direitos reservados.</p>
+  </footer>
+</html>

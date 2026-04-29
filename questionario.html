@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- usa o mesmo style.css -->
+    <style>
+      /* Complemento específico para o questionário */
+      .progress {
+        margin-top: 15px;
+        height: 8px;
+        background: var(--secondary);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .progress-bar {
+        height: 100%;
+        background: var(--primary);
+        width: 100%;
+        transition: width 1s linear;
+      }
+      .resultado {
+        margin-top: 20px;
+        font-weight: bold;
+        color: var(--primary);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page-hero">
+      <h1>Questionário</h1>
+      <p>Responda com sinceridade para identificar sinais de violência.</p>
+    </section>
+
+    <main class="content">
+      <div id="mensagemErro" class="mensagem erro"></div>
+      <div class="card">
+        <form id="formQuestionario" class="form">
+          <div class="pergunta">
+            <label>Ele tenta controlar a roupa que você usa não somente com tom autoritário, mas usando palavras que te deixam mal?</label><br />
+            <input type="radio" name="q1" value="sim" required/> Sim
+            <input type="radio" name="q1" value="nao" /> Não
+          </div>
+
+          <div class="pergunta">
+            <label
+              >Ele tenta te afastar de amigos e da família ou tenta te impedir
+              de trabalhar ou estudar usando argumentos chantagiosos?</label
+            ><br />
+            <input type="radio" name="q2" value="sim" required/> Sim
+            <input type="radio" name="q2" value="nao" /> Não
+          </div>
+
+          <div class="pergunta">
+            <label
+              >Durante as discussões, ele aparenta ficar sem controle ou te
+              ofende ou grita com você com frequência?</label
+            ><br />
+            <input type="radio" name="q3" value="sim" required/> Sim
+            <input type="radio" name="q3" value="nao" /> Não
+          </div>
+
+          <div class="pergunta">
+            <label
+              >Ele costuma falar sobre seu corpo, trabalho e/ou sua maternidade
+              de maneira que você se sinta mal?</label
+            ><br />
+            <input type="radio" name="q4" value="sim" required/> Sim
+            <input type="radio" name="q4" value="nao" /> Não
+          </div>
+
+          <div class="pergunta">
+            <label
+              >Ele ameaça expor detalhes de sua vida íntima por redes sociais ou
+              outros meios?</label
+            ><br />
+            <input type="radio" name="q5" value="sim" required/> Sim
+            <input type="radio" name="q5" value="nao" /> Não
+          </div>
+
+          <div class="pergunta">
+            <label
+              >Ele controla seu dinheiro ou tenta controlar suas decisões
+              financeiras?</label
+            ><br />
+            <input type="radio" name="q6" value="sim" required/> Sim
+            <input type="radio" name="q6" value="nao" /> Não
+          </div>
+
+          <div class="pergunta">
+            <label
+              >Durante as discussões ou por outros motivos, ele costuma destruir
+              algo que pertence a você como roupas, documentos e/ou
+              fotos?</label
+            ><br />
+            <input type="radio" name="q7" value="sim" required/> Sim
+            <input type="radio" name="q7" value="nao" /> Não
+          </div>
+
+          <div class="pergunta">
+            <label
+              >Ele força a relação sexual ou te obriga a ter relação sexual sem
+              proteção ainda que você não queira?</label
+            ><br />
+            <input type="radio" name="q8" value="sim" required/> Sim
+            <input type="radio" name="q8" value="nao" /> Não
+          </div>
+
+          <button type="button" id="btnEnviar" class="btn-primary">
+            Enviar
+          </button>
+        </form>
+
+        <div id="resultado" class="resultado"></div>
+        <div class="progress" style="display: none">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 Rompendo o Silêncio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <!-- ACESSIBILIDADE VLIBRAS -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+  </body>
+
+</html>

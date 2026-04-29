@@ -1,0 +1,444 @@
+/* VARIÁVEIS E RESET */
+
+:root {
+    --primary: #e85d75;
+    --secondary: #f8f5f7;
+    --dark: #1e1e2f;
+    --text: #555;
+    --bg-light: #f7f7f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: var(--dark);
+    line-height: 1.6; /* Melhora a leitura geral */
+}
+
+/* ANIMAÇÃO LOGO CORAÇÃO */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre o coração e o texto */
+}
+
+.heart-svg {
+  fill: none; /* Sem preenchimento inicial */
+  stroke: #ff3e60; /* Cor do contorno */
+  stroke-width: 1.5; /* Espessura da linha */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  
+  /* Efeito de desenho */
+  stroke-dasharray: 100; /* Tamanho da linha */
+  stroke-dashoffset: 100; /* Esconde a linha */
+  animation: drawHeart 2s ease-in-out infinite alternate;
+}
+
+@keyframes drawHeart {
+  0% {
+    stroke-dashoffset: 100;
+    fill: transparent;
+  }
+  50% {
+    stroke-dashoffset: 0; /* Desenha a linha */
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #ff3e60; /* Preenche com a cor no final */
+  }
+}
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.navbar nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--primary);
+}
+
+/* BOTÕES GERAIS */
+
+.btn-emergency {
+    background: #2f3e63;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #e85d75, #f4a261);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer; /* efeito da mãozinha */
+}
+
+.btn-secondary {
+    background: #2f3e63;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* HERO PRINCIPAL (HOME) */
+
+.hero {
+    padding: 80px 60px;
+    background: linear-gradient(to right, #fff, #f7f2f4);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.tag {
+    color: var(--primary);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin: 20px 0;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    color: var(--text);
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+/* DESTAQUE VOCÊ SABIA */
+
+.you-knew {
+    background: #ffffff;
+    border-left: 5px solid var(--primary);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin: 30px 0;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.you-knew:hover {
+    transform: translateY(-5px);
+}
+
+.you-knew-icon {
+    font-size: 24px;
+    background: var(--secondary);
+    padding: 10px;
+    border-radius: 50%;
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.you-knew-label {
+    display: block;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.you-knew-content p {
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.you-knew-content p:last-child {
+    margin-bottom: 0;
+    font-weight: 600;
+    
+}
+
+/* HERO INTERNO (SOBRE/SERVIÇOS) */
+
+.page-hero {
+    padding: 80px 60px;
+    background: linear-gradient(to right, #f7f7f7, #b38d8d);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 250px;
+    width: 100%;
+}
+
+.page-hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.page-hero p {
+    color: var(--text);
+    max-width: 600px;
+}
+
+/* CONTEÚDO E CARDS */
+
+.content {
+    padding: 60px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.card h2, .card h3 {
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+/* FORMULÁRIO */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form input, .form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+.form button {
+    border: none;
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.form button:hover {
+    opacity: 0.9;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: var(--bg-light);
+    width: 100%;
+}
+
+/* BOTÃO PÂNICO FIXO */
+
+#panic-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 2000;
+}
+
+/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .page-hero {
+        padding: 40px 20px;
+        min-height: 180px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .page-hero h1 {
+        font-size: 28px;
+    }
+
+    .you-knew {
+        flex-direction: column;
+        align-items: center;
+        text-align: justify;
+        padding: 20px;
+    }
+
+    .content {
+        padding: 30px 20px;
+    }
+}
+
+/* QUESTIONÁRIO (VISUAL ELEGANTE) */
+.mensagem-erro {
+    display: none;
+    background: #ffe6e6;
+    color: #b30000;
+    border-left: 5px solid #ff4d4d;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.mensagem-erro.ativa {
+    display: block;
+
+}
+
+.erro-pergunta {
+    border: 2px solid #ff4d4d;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff5f5;
+}
+
+/* --- ESTILOS PARA LISTAGEM DE SERVIÇOS --- */
+
+/* Grid que se ajusta sozinho: 1 coluna no celular, 2 ou 3 no PC */
+.grid-delegacias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Estilo para os cards de informação */
+.info-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.info-card h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 15px;
+}
+
+/* Botão de ligar dentro do card */
+.btn-call {
+    display: block;
+    background: var(--dark);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.btn-call:hover {
+    background: var(--primary);
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 480px) {
+    .grid-delegacias {
+        grid-template-columns: 1fr; /* Força uma coluna apenas em celulares pequenos */
+    }
+    
+}
