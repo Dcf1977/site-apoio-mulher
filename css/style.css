@@ -259,6 +259,10 @@ body {
     color: var(--dark);
 }
 
+.card a {
+    display: block;
+    width: 100%;
+}
 
 /* FORMULÁRIO */
 .form {

@@ -199,8 +199,11 @@ function abrirPaginaDelegacias() {
         </html>
     `;
 
+    setTimeout(() => {
+    novaJanela.document.open();
     novaJanela.document.write(htmlFinal);
     novaJanela.document.close();
+}, 100);
 }
 
 
