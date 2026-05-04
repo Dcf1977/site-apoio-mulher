@@ -182,7 +182,7 @@ function abrirPaginaDelegacias() {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Delegacias Especializadas</title>
-            <link rel="stylesheet" href=" https://dcf1977.github.io/site-apoio-mulher/css/style.css">
+            <link rel="stylesheet" href="https://dcf1977.github.io/site-apoio-mulher/css/style.css">
         </head>
         <body style="font-family: 'Inter', sans-serif; background: #f7f7f7; padding: 20px;">
             <div style="max-width: 800px; margin: 0 auto;">
