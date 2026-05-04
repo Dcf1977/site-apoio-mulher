@@ -41,22 +41,27 @@
 
     <main class="content">
       <form
+        id="meuForm"
         class="form"
-        action="https://formspree.io/f/SEU_ID_AQUI"
+        action="https://formspree.io/f/mnjwdane"
         method="POST"
       >
-        <input type="text" name="nome" placeholder="Seu nome (opcional)" />
-        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <input type="text" id="campoNome" name="nome" placeholder="Seu nome (opcional)" />
+        <input type="email" id="campoEmail" name="email" placeholder="Seu e-mail" required />
 
         <textarea
+          id="campoRelato"
           name="relato"
           rows="6"
           placeholder="Escreva seu relato..."
           required
         ></textarea>
 
-        <button type="submit" class="btn-primary">Enviar relato</button>
+        <button type="submit" id="btnEnviar" class="btn-primary">Enviar relato</button>
       </form>
+
+      <p id="mensagemStatus" style="display: none;"></p>
+
     </main>
 
     <script src="js/script.js"></script>

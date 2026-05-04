@@ -1,5 +1,4 @@
 /* VARIÁVEIS E RESET */
-
 :root {
     --primary: #e85d75;
     --secondary: #f8f5f7;
@@ -21,8 +20,8 @@ body {
     line-height: 1.6; /* Melhora a leitura geral */
 }
 
-/* ANIMAÇÃO LOGO CORAÇÃO */
 
+/* ANIMAÇÃO LOGO CORAÇÃO */
 .logo {
   display: flex;
   align-items: center;
@@ -57,8 +56,8 @@ body {
   }
 }
 
-/* NAVBAR */
 
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -88,8 +87,8 @@ body {
     color: var(--primary);
 }
 
-/* BOTÕES GERAIS */
 
+/* BOTÕES GERAIS */
 .btn-emergency {
     background: #2f3e63;
     color: white;
@@ -100,13 +99,15 @@ body {
 }
 
 .btn-primary {
+    cursor: pointer; /* efeito da mãozinha */
     background: linear-gradient(45deg, #e85d75, #f4a261);
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
     text-decoration: none;
     display: inline-block;
-    cursor: pointer; /* efeito da mãozinha */
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-secondary {
@@ -119,8 +120,8 @@ body {
     cursor: pointer;
 }
 
-/* HERO PRINCIPAL (HOME) */
 
+/* HERO PRINCIPAL (HOME) */
 .hero {
     padding: 80px 60px;
     background: linear-gradient(to right, #fff, #f7f2f4);
@@ -159,8 +160,8 @@ body {
     margin-bottom: 40px;
 }
 
-/* DESTAQUE VOCÊ SABIA */
 
+/* DESTAQUE VOCÊ SABIA */
 .you-knew {
     background: #ffffff;
     border-left: 5px solid var(--primary);
@@ -213,8 +214,8 @@ body {
     
 }
 
-/* HERO INTERNO (SOBRE/SERVIÇOS) */
 
+/* HERO INTERNO (SOBRE/SERVIÇOS) */
 .page-hero {
     padding: 80px 60px;
     background: linear-gradient(to right, #f7f7f7, #b38d8d);
@@ -237,8 +238,8 @@ body {
     max-width: 600px;
 }
 
-/* CONTEÚDO E CARDS */
 
+/* CONTEÚDO E CARDS */
 .content {
     padding: 60px;
     max-width: 1000px;
@@ -258,8 +259,8 @@ body {
     color: var(--dark);
 }
 
-/* FORMULÁRIO */
 
+/* FORMULÁRIO */
 .form {
     display: flex;
     flex-direction: column;
@@ -271,6 +272,7 @@ body {
     border-radius: 8px;
     border: 1px solid #ddd;
     font-family: inherit;
+    font-size: 16px; /* Evita zoom automático no iOS */
 }
 
 .form button {
@@ -288,17 +290,8 @@ body {
     opacity: 0.9;
 }
 
-/* FOOTER */
-
-footer {
-    padding: 40px 20px;
-    text-align: center;
-    background: var(--bg-light);
-    width: 100%;
-}
 
 /* BOTÃO PÂNICO FIXO */
-
 #panic-button {
     position: fixed;
     bottom: 20px;
@@ -314,8 +307,8 @@ footer {
     z-index: 2000;
 }
 
-/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
 
+/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
 @media (max-width: 768px) {
     .navbar {
         padding: 20px;
@@ -365,6 +358,7 @@ footer {
     }
 }
 
+
 /* QUESTIONÁRIO (VISUAL ELEGANTE) */
 .mensagem-erro {
     display: none;
@@ -389,8 +383,8 @@ footer {
     background-color: #fff5f5;
 }
 
-/* --- ESTILOS PARA LISTAGEM DE SERVIÇOS --- */
 
+/* --- ESTILOS PARA LISTAGEM DE SERVIÇOS --- */
 /* Grid que se ajusta sozinho: 1 coluna no celular, 2 ou 3 no PC */
 .grid-delegacias {
     display: grid;
@@ -418,6 +412,7 @@ footer {
     margin-bottom: 15px;
 }
 
+
 /* Botão de ligar dentro do card */
 .btn-call {
     display: block;
@@ -435,10 +430,49 @@ footer {
     background: var(--primary);
 }
 
+
 /* Ajuste para telas pequenas */
 @media (max-width: 480px) {
     .grid-delegacias {
         grid-template-columns: 1fr; /* Força uma coluna apenas em celulares pequenos */
     }
     
+}
+
+
+/* MENSAGEM DE STATUS FORM NA PÁGINA CONTATO */
+#mensagemStatus {
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 15px;
+    animation: fadeIn 0.4s ease;
+}
+
+.sucesso {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.erro {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* FOOTER */
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: var(--bg-light);
+    width: 100%;
 }

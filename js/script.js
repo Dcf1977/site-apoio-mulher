@@ -10,7 +10,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 
-// Função chamada pelo botão "Responder" da página principal
+// Função chamada pelo botão "Responder" da página sobre
 function respQuestionario() {
     window.open("questionario.html", "_blank");
 }
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (linkDelegacia) {
         linkDelegacia.addEventListener("click", (e) => {
-            // e.preventDefault(); // Opcional com javascript:void(0), mas boa prática
+            e.preventDefault(); // Opcional com javascript:void(0), mas boa prática
             abrirPaginaDelegacias();
         });
     }
@@ -202,3 +202,71 @@ function abrirPaginaDelegacias() {
     novaJanela.document.write(htmlFinal);
     novaJanela.document.close();
 }
+
+
+// Script para Form da página contato
+const formulario = document.getElementById('meuForm');
+const statusMsg = document.getElementById('mensagemStatus');
+const btnEnviar = document.getElementById('btnEnviar');
+
+formulario.addEventListener('submit', async function(event) {
+    event.preventDefault(); // Impede o recarregamento da página
+
+    const nomeInput = document.getElementById('campoNome');
+    const emailInput = document.getElementById('campoEmail');
+    
+    // 1. Lógica de Anonimato: Se estiver vazio, define como "Anônimo"
+    if (nomeInput.value.trim() === "") {
+        nomeInput.value = "Anônimo";
+    }
+
+    // 2. Validação de E-mail via Regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailInput.value)) {
+        exibirStatus("Por favor, insira um e-mail válido.", "erro");
+        return;
+    }
+
+    // Bloqueia o botão para evitar múltiplos cliques
+    btnEnviar.disabled = true;
+    btnEnviar.innerText = "Enviando...";
+
+    // 3. Preparação e Envio dos dados
+    const dados = new FormData(this);
+
+    try {
+        const response = await fetch(this.action, {
+            method: this.method,
+            body: dados,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            exibirStatus("✅ Relato enviado com sucesso!", "sucesso");
+            formulario.reset();
+        } else {
+            exibirStatus("❌ Erro no servidor. Verifique o ID do Formspree.", "erro");
+        }
+    } catch (error) {
+        exibirStatus("❌ Erro de conexão. Verifique sua internet.", "erro");
+    } finally {
+        // Reativa o botão
+        btnEnviar.disabled = false;
+        btnEnviar.innerText = "Enviar relato";
+    }
+});
+
+// Função auxiliar para mostrar a mensagem
+function exibirStatus(texto, classe) {
+    statusMsg.innerText = texto;
+    statusMsg.className = classe; // Define se é 'sucesso' ou 'erro'
+    statusMsg.style.display = "block";
+
+    // Oculta após 5 segundos
+    setTimeout(() => {
+        statusMsg.style.display = "none";
+    }, 5000);
+    
+} 
