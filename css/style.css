@@ -259,9 +259,12 @@ body {
     color: var(--dark);
 }
 
-.card a {
-    display: block;
-    width: 100%;
+.card p a {
+    display: inline !important;
+    text-decoration: underline;
+    /*color: var(--primary);*/
+    padding: 0;
+    margin: 0;
 }
 
 /* FORMULÁRIO */
